@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dreamiez Store - Beranda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff0f5;
+      color: #4a004e;
+    }
+
+    header {
+      background-image: linear-gradient(rgba(255, 160, 176, 0.7), rgba(255, 160, 176, 0.7)), url('dream.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+
+    nav {
+      background-color: #ffb6c1;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f9cddc;
+    }
+
+    marquee {
+      background-color: #ffe4ec;
+      color: #d0006f;
+      font-weight: bold;
+      padding: 10px 0;
+      font-size: 0.95em;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 20px;
+      gap: 20px;
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+      width: 20%;
+      background-color: #ffe4ec;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar-left h3,
+    .sidebar-right h3 {
+      margin-top: 0;
+      color: #d0006f;
+      font-size: 1.2em;
+    }
+
+    .sidebar-left ul,
+    .sidebar-right ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.95em;
+    }
+
+    .sidebar-left li,
+    .sidebar-right li {
+      margin-bottom: 10px;
+      line-height: 1.5em;
+    }
+
+    .content {
+      flex: 1;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .about h2 {
+      color: #d0006f;
+    }
+
+    .about p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .cta {
+      margin: 40px auto 0;
+    }
+
+    .cta a {
+      background-color: #ff85a2;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 8px rgba(255, 133, 162, 0.3);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #ff5f86;
+      transform: scale(1.05);
+    }
+
+    .social {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .social a {
+      font-size: 1.4em;
+      margin: 0 10px;
+      color: #d0006f;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .social a:hover {
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #888;
+      background-color: #fff5fa;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Selamat Datang di Dreamiez Store 💖</h1>
+    <p>Temukan photocard NCT Dream kesayanganmu di sini!</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="produk.html">Produk</a>
+    <a href="transaksi.html">Transaksi</a>
+    <a href="ceritaDreamiez.html">Dreamiez</a>
+    <a href="profil.html">Created By</a>
+  </nav>
+
+  <marquee behavior="scroll" direction="left" scrollamount="6">
+    🎉 Promo Spesial Agustus: Beli 2 photocard, GRATIS 1 photocard fanmade eksklusif! 💕 | 📦 Pengiriman setiap Selasa & Jumat! | 🛍️ Yuk buruan check produk terbaru kami di halaman Produk!
+  </marquee>
+
+  <div class="main-container">
+    <aside class="sidebar-left">
+      <h3>🌟 Info Buat Kamu</h3>
+      <ul>
+        <li>✨ Cara Bedain Photocard Ori & Fanmade</li>
+        <li>🎁 Tips Merawat Koleksi PC-mu</li>
+        <li>📦 Jadwal Pengiriman Terbaru</li>
+        <li>💬 FAQ: Tanya Jawab Seputar Toko</li>
+        <li>🎀 Cara Ikut Pre-order</li>
+        <li>🛍️ Panduan Belanja di Dreamiez Store</li>
+        <li>💖 Rekomendasi dari Admin</li>
+        <li>🌈 Cerita NCTzen dan Koleksi Mereka</li>
+      </ul>
+    </aside>
+
+    <section class="about content">
+      <h2>💌 Tentang Dreamiez Store</h2>
+      <p>Hai bestie! 👋 Selamat datang di <strong>Dreamiez Store</strong> 💖 tempat paling manis buat kamu yang cinta banget sama NCT Dream!  
+      Kami di sini bukan cuma jualan photocard, tapi juga bagi-bagi kebahagiaan buat sesama NCTzen.  
+      Semua produk yang kami pilih spesial, dari official sampai fanmade berkualitas~</p>
+      <p>Kalo kamu punya pertanyaan atau request khusus, DM aja yaa 💬 Kami fast respon dan friendly banget! Terima kasih udah mampir 💚</p>
+      <div class="cta">
+        <a href="produk.html">Lihat Produk</a>
+      </div>
+    </section>
+
+    <aside class="sidebar-right">
+      <h3>⏰ Jadwal Toko</h3>
+      <ul>
+        <li><strong>Senin - Jumat:</strong><br>09.00 - 17.00 WIB</li>
+        <li><strong>Sabtu:</strong><br>10.00 - 14.00 WIB</li>
+        <li><strong>Minggu & Tanggal Merah:</strong><br>Tutup 💖</li>
+        <li><strong>Fast Respon:</strong><br>Instagram & WhatsApp</li>
+        <li><strong>Pengiriman:</strong><br>Setiap Selasa & Jumat</li>
+      </ul>
+    </aside>
+  </div>
+
+  <section class="social">
+    <h3>🛒 Yuk Kepoin Sosmed Kami!:</h3>
+    <a href="https://instagram.com" target="_blank">📷 Instagram</a>
+    <a href="https://wa.me/6281234567890" target="_blank">📞 WhatsApp</a>
+    <a href="mailto:dreamiez@store.com">📧 Email</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Dreamiez Store. All rights reserved.
+  </footer>
+
+</body>
+</html>

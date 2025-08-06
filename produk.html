@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Produk - Dreamiez Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background-color: #fff0f5; margin: 0; padding: 0; }
+    header { background-color: #ff85a2; padding: 15px; text-align: center; color: white; }
+    nav { text-align: center; margin: 15px 0; }
+    nav a { margin: 0 10px; color: #d0006f; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .produk-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* sekarang 4 kolom */
+  gap: 20px;
+  padding: 20px;
+}
+
+
+    .card { background: #fff; border: 2px solid #ffc2d4; border-radius: 10px; padding: 15px; text-align: center; box-shadow: 2px 2px 10px rgba(255, 132, 166, 0.1); }
+    .card img { max-width: 100%; height: 180px; object-fit: cover; border-radius: 6px; }
+    .card button { margin-top: 10px; background: #ff85a2; color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; }
+    .card button:hover { background-color: #ff5f86; }
+
+    #keranjangWrapper { max-width: 1000px; margin: 30px auto; background: #fff0f5; padding: 15px; border-radius: 10px; }
+    .keranjang-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; background: #fff; padding: 10px; border-radius: 8px; border: 1px solid #ffc2d4; }
+    .keranjang-thumb { width: 60px; height: 60px; object-fit: cover; border-radius: 6px; }
+    .keranjang-info { flex: 1; }
+    .jumlah button { padding: 0 6px; }
+    .jumlah { display: flex; align-items: center; gap: 5px; }
+    .hapus { color: red; cursor: pointer; margin-left: 8px; font-size: 20px; }
+
+    footer { text-align: center; margin: 30px 0; color: #999; }
+
+    .keranjang-opsi {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .keranjang-opsi button {
+      background-color: #ff85a2;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .keranjang-opsi button:hover {
+      background-color: #ff5f86;
+    }
+
+    .main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.sidebar-left, .sidebar-right {
+  width: 200px;
+  background-color: #ffe3ec;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(255, 132, 166, 0.1);
+}
+
+.sidebar-left h3, .sidebar-right h3 {
+  color: #d0006f;
+  margin-bottom: 10px;
+}
+
+.sidebar-left ul, .sidebar-right ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.sidebar-left li::before, .sidebar-right li::before {
+  content: "• ";
+  color: #ff5f86;
+}
+
+.content-area {
+  flex: 1;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header><h1>Dream Collection 💚 Photocard Edition</h1></header>
+  <nav>
+    <a href="index.html">Beranda</a> |
+    <a href="produk.html">Produk</a> |
+    <a href="transaksi.html">Transaksi</a> |
+    <a href="ceritaDreamiez.html">Dreamiez</a> |
+    <a href="profil.html">Created By</a>
+  </nav>
+
+  <div class="main-container">
+
+  <aside class="sidebar-left">
+    <h3>💝 Info Promo</h3>
+    <ul>
+      <li>🛍️ Beli 3 gratis ongkir!</li>
+      <li>🎁 Diskon 50% untuk pembelian > Rp100K</li>
+      <li>💬 Gunakan kode <b>DREAMIEZ10</b> untuk diskon 10%</li>
+      <li>⏰ Flash Sale setiap hari Jumat pukul 20.00 WIB!</li>
+      <li>📦 Bundling hemat: Beli 2 photocard, dapat diskon tambahan</li>
+    </ul>
+  </aside>
+  
+  <section class="produk-container">
+    <div class="card"><img src="jenolee.jpeg"><h3>PC Jeno 🔥</h3><p>Rp 50.000</p><button onclick="tambah('PC Jeno 🔥', 50000)">Beli Sekarang</button></div>
+    <div class="card"><img src="haechan.jpg.jpeg"><h3>PC Haechan 🌞</h3><p>Rp 35.000</p><button onclick="tambah('PC Haechan 🌞', 35000)">Beli Sekarang</button></div>
+    <div class="card"><img src="mark.jpg.jpeg"><h3>PC Mark 🐯</h3><p>Rp 50.000</p><button onclick="tambah('PC Mark 🐯', 50000)">Beli Sekarang</button></div>
+    <div class="card"><img src="jisung2.jpg.jpeg"><h3>PC Jisung 🐣</h3><p>Rp 30.000</p><button onclick="tambah('PC Jisung 🐣', 30000)">Beli Sekarang</button></div>
+    <div class="card"><img src="jaemin.jpeg"><h3>PC Jaemin ✨</h3><p>Rp 35.000</p><button onclick="tambah('PC Jaemin ✨', 35000)">Beli Sekarang</button></div>
+  <div class="card"><img src="chenle.jpg.jpeg"><h3>PC Chenle 🐬</h3><p>Rp 30.000</p><button onclick="tambah('PC Chenle 🐬', 30000)">Beli Sekarang</button></div>
+  <div class="card"><img src="renjun.jpg.jpeg"><h3>PC Renjun 🐰</h3><p>Rp 30.000</p><button onclick="tambah('PC Renjun 🐰', 30000)">Beli Sekarang</button></div>
+  <div class="card"><img src="NCT DREAM.jpeg"><h3>PC Full Member 📦💚</h3><p>Rp 250.000</p><button onclick="tambah('PC Full Member 📦💚', 250000)">Beli Sekarang</button></div>
+</section>
+
+<aside class="sidebar-right">
+    <h3>🔥 Produk Terpopuler</h3>
+    <ul>
+      <li>📸 PC Haechan – Terjual 50+</li>
+      <li>🎵 PC Mark – Limited Stock</li>
+      <li>🌟 PC Jaemin – Favorit minggu ini</li>
+      <li>❤️ PC Jeno – Best seller bulan ini</li>
+    </ul>
+  </aside>
+</div> <!-- Tutup .main-container -->
+
+
+  <div id="keranjangWrapper">
+    <h2>🛒 Keranjang Belanja</h2>
+    <div id="keranjang"></div>
+    <div class="keranjang-opsi">
+      <p><b>Total: <span id="totalHarga">Rp 0</span></b></p>
+      <div>
+        <button onclick="checkout()">Checkout Sekarang</button>
+        <button onclick="kosongkan()">Kosongkan</button>
+      </div>
+    </div>
+  </div>
+
+  <footer><p>&copy; 2025 Dreamiez Store. All rights reserved.</p></footer>
+
+  <script>
+    let keranjang = JSON.parse(localStorage.getItem("keranjang")) || {};
+
+    function tambah(nama, harga) {
+      if (!keranjang[nama]) keranjang[nama] = { jumlah: 0, harga: harga, dipilih: true };
+      keranjang[nama].jumlah++;
+      keranjang[nama].dipilih = true;
+      simpan(); tampilkan();
+    }
+
+    function ubahJumlah(nama, delta) {
+      if (keranjang[nama]) {
+        keranjang[nama].jumlah += delta;
+        if (keranjang[nama].jumlah <= 0) delete keranjang[nama];
+        simpan(); tampilkan();
+      }
+    }
+
+    function hapus(nama) {
+      delete keranjang[nama];
+      simpan(); tampilkan();
+    }
+
+    function centang(nama, nilai) {
+      if (keranjang[nama]) {
+        keranjang[nama].dipilih = nilai;
+        simpan(); tampilkan();
+      }
+    }
+
+    function simpan() {
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+    }
+
+    function tampilkan() {
+      const el = document.getElementById("keranjang");
+      el.innerHTML = "";
+      let total = 0;
+
+      for (let nama in keranjang) {
+        const item = keranjang[nama];
+        if (!item || typeof item.harga !== 'number') continue;
+
+        const subtotal = item.jumlah * item.harga;
+        if (item.dipilih) total += subtotal;
+
+        const container = document.createElement("div");
+        container.className = "keranjang-item";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = item.dipilih;
+        checkbox.onchange = () => centang(nama, checkbox.checked);
+        container.appendChild(checkbox);
+
+        const img = document.createElement("img");
+        img.className = "keranjang-thumb";
+        if (nama.includes("Jeno")) img.src = "jenolee.jpeg";
+        else if (nama.includes("Haechan")) img.src = "haechan.jpg.jpeg";
+        else if (nama.includes("Mark")) img.src = "mark.jpg.jpeg";
+        else if (nama.includes("Jisung")) img.src = "jisung2.jpg.jpeg";
+        else if (nama.includes("Jaemin")) img.src = "jaemin.jpeg";
+        else if (nama.includes("Chenle")) img.src = "chenle.jpg.jpeg";
+        else if (nama.includes("Renjun")) img.src = "renjun.jpg.jpeg";
+        else img.src = "NCT DREAM.jpeg";
+        container.appendChild(img);
+
+        const info = document.createElement("div");
+        info.className = "keranjang-info";
+        info.innerHTML = `
+          <strong>${nama}</strong><br>
+          <p>${item.jumlah} x Rp${item.harga.toLocaleString("id-ID")} = Rp ${subtotal.toLocaleString("id-ID")}</p>
+          <p>Versi: Official Fanmade</p>
+        `;
+        container.appendChild(info);
+
+        const jumlahDiv = document.createElement("div");
+        jumlahDiv.className = "jumlah";
+        const btnMin = document.createElement("button");
+        btnMin.textContent = "-";
+        btnMin.onclick = () => ubahJumlah(nama, -1);
+        const btnPlus = document.createElement("button");
+        btnPlus.textContent = "+";
+        btnPlus.onclick = () => ubahJumlah(nama, 1);
+        jumlahDiv.appendChild(btnMin);
+        jumlahDiv.appendChild(btnPlus);
+        container.appendChild(jumlahDiv);
+
+        const hapusBtn = document.createElement("span");
+        hapusBtn.className = "hapus";
+        hapusBtn.textContent = "🗑️";
+        hapusBtn.onclick = () => hapus(nama);
+        container.appendChild(hapusBtn);
+
+        el.appendChild(container);
+      }
+
+      document.getElementById("totalHarga").textContent = "Rp " + total.toLocaleString("id-ID");
+    }
+
+    function kosongkan() {
+      if (confirm("Yakin ingin mengosongkan keranjang?")) {
+        keranjang = {};
+        simpan();
+        tampilkan();
+      }
+    }
+
+    function checkout() {
+      const checkoutData = {};
+      for (let nama in keranjang) {
+        if (keranjang[nama].dipilih) checkoutData[nama] = keranjang[nama];
+      }
+      localStorage.setItem("checkout", JSON.stringify(checkoutData));
+      window.location.href = "transaksi.html";
+    }
+
+    tampilkan();
+  </script>
+
+</body>
+</html>

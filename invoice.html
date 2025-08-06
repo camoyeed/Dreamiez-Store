@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice - Dreamiez Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe4ec, #f9cddc);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .invoice-container {
+      max-width: 700px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+    h1 {
+      text-align: center;
+      color: #d0006f;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .info strong {
+      color: #a9004b;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    ul li {
+      padding: 10px;
+      background-color: #fff0f5;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+    .total {
+      margin-top: 20px;
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      color: #a9004b;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      color: #888;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="invoice-container">
+  <h1>💌 Invoice Pembelian</h1>
+
+  <div class="info">
+    <p><strong>Nama Pembeli:</strong> <span id="nama"></span></p>
+    <p><strong>No HP:</strong> <span id="telepon"></span></p>
+    <p><strong>Alamat:</strong> <span id="alamat"></span></p>
+    <p><strong>Tanggal:</strong> <span id="tanggal"></span></p>
+    <p><strong>Metode Pembayaran:</strong> <span id="pembayaran"></span></p>
+    <p><strong>Freebies:</strong> <span id="bonus"></span></p>
+  </div>
+
+  <h3>🛍️ Rincian Produk:</h3>
+
+  <ul id="daftarKeranjang"></ul>
+
+  <div class="total">
+    Total Pembayaran: <span id="totalHarga">Rp 0</span>
+  </div>
+
+  <div id="pesanDiterima" style="background-color:#e0ffe8; color:#2e7d32; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 20px; font-weight: bold;">
+  🎉 Yeay! Pesananmu sudah kami terima. Tim kurir kami sedang bersiap mengantarkan cinta ini 💚📦
+</div>
+
+  <div class="footer">
+    Terima kasih sudah berbelanja di <strong>Dreamiez Store</strong> 💖<br>
+    Jangan lupa follow kami di Instagram @dreamiez.store
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ambil data dari checkout
+    const data = JSON.parse(localStorage.getItem("checkout")) || {};
+    let total = 0;
+    const daftarKeranjang = document.getElementById("daftarKeranjang");
+
+    for (let nama in data) {
+      const item = data[nama];
+      if (!item || typeof item.harga !== 'number') continue;
+      const subtotal = item.jumlah * item.harga;
+      total += subtotal;
+
+      const li = document.createElement("li");
+      li.textContent = `${nama} (${item.jumlah}x) - Rp ${subtotal.toLocaleString("id-ID")}`;
+      daftarKeranjang.appendChild(li);
+    }
+
+    document.getElementById("totalHarga").textContent = "Rp " + total.toLocaleString("id-ID");
+
+    // Ambil data user dari session/form
+    document.getElementById("nama").textContent = localStorage.getItem("nama") || "-";
+    document.getElementById("telepon").textContent = localStorage.getItem("telepon") || "-";
+    document.getElementById("alamat").textContent = localStorage.getItem("alamat") || "-";
+    document.getElementById("tanggal").textContent = localStorage.getItem("tanggal") || "-";
+    document.getElementById("pembayaran").textContent = localStorage.getItem("pembayaran") || "-";
+    document.getElementById("bonus").textContent = localStorage.getItem("bonus") || "-";
+
+    // Bersihkan semua data jika ingin
+    // localStorage.removeItem("checkout");
+  });
+</script>
+
+<a href="produk.html" style="position: fixed; bottom: 20px; left: 20px; background-color: #ff85a2; color: white; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);">
+  🛍️ Lihat Produk Lainnya
+</a>
+
+</body>
+</html>
